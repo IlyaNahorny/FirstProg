@@ -1,8 +1,8 @@
 package com.springapp.mvc.dao;
 
+import com.springapp.mvc.Test;
 import com.springapp.mvc.models.User;
-import org.hibernate.Query;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -23,8 +23,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        Query query = sessionFactory.getCurrentSession().createQuery("from user");
-        List<User> list = query.list();
-        return list;
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria =session.createCriteria(User.class);
+        return (List<User>) criteria.list();
     }
 }

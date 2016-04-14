@@ -24,17 +24,20 @@ public class UserController {
     public String printWelcome(ModelMap model) {
 //        List<User> users = userService.getAllUsers();
 //        model.addAttribute("users",users);
+
+        model.addAttribute("users",userService.getAllUsers());
         return "home";
     }
 
-//    @RequestMapping(value = "/insert", method = RequestMethod.GET)
-//    public String insert() {
-//        userService.insert(new User("admin", "admin", 20));
-//        return "hello";
-//    }
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    public String insert() {
+        userService.insert(new User("test","test","test",20,"test","test"));
+        return "hello";
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String redirectLogin(){
+//        userService.getAllUsers();
         return "login";
     }
 

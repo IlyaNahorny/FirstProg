@@ -104,4 +104,17 @@ public class User implements Serializable {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", age=" + age +
+                ", user='" + user + '\'' +
+                ", pass='" + pass + '\'' +
+                '}';
+    }
 }
