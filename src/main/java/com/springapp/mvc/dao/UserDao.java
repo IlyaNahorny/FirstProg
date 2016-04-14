@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface UserDao {
     void insert(User user);
-    //public List<User> getAllUsers();
+    public List<User> getAllUsers();
 }
